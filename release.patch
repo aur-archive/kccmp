@@ -1,0 +1,23 @@
+diff -Nur orig/kccmp.pro new/kccmp.pro
+--- orig/kccmp.pro	2012-02-12 02:33:49.000000000 +0100
++++ new/kccmp.pro	2012-04-01 19:30:08.949149999 +0200
+@@ -1,6 +1,6 @@
+ TARGET  = kccmp
+ SOURCES = config_value.cpp config.cpp main.cpp config_view.cpp
+ HEADERS = config_value.hpp config.hpp config_view.hpp
+-CONFIG += warn_on debug
++CONFIG += warn_on nodebug
+ OBJECTS_DIR = obj
+ #MOC_DIR =
+diff -Nur orig/main.cpp new/main.cpp
+--- orig/main.cpp	2012-02-12 02:33:49.000000000 +0100
++++ new/main.cpp	2012-04-01 19:30:22.345744087 +0200
+@@ -54,7 +54,7 @@
+ {
+     QApplication a(argc,argv);
+     if( 3 != argc ) {
+-	cerr << "symtax error, should be:" << endl;
++	cerr << "Syntax error, should be:" << endl;
+ 	cerr << "% " << argv[0] << " config_file1 config_file2" << endl;
+ 	exit(-1);
+     }
